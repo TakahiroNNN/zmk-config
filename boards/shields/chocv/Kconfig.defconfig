@@ -1,9 +1,0 @@
-if SHIELD_CHOCV
-
-config ZMK_KEYBOARD_NAME
-    default "hieutt-chocv"
-
-config ZMK_MOUSE
-    default y
-
-endif
