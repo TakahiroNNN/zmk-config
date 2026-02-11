@@ -5,29 +5,20 @@
 # pass flags to the build command, `snippet` to add a Zephyr snippet, and
 # `artifact-name` to assign a name to distinguish build outputs from each other:
 #
-# board: [ "nice_nano_v2" ]
-# shield: [ "corne_left", "corne_right" ]
-# include:
-#   - board: bdn9_rev2
-#   - board: nice_nano_v2
-#     shield: reviung41
-#   - board: nice_nano_v2
-#     shield: corne_left
-#     snippet: studio-rpc-usb-uart
-#     cmake-args: -DCONFIG_ZMK_STUDIO=y
-#     artifact-name: corne_left_with_studio
-#
 ---
 include:
+  # 接続リセット用（トラブル時にあると便利なので残します）
   - board: nice_nano_v2
     shield: settings_reset
+
+  # Torabo Tsuki 左手側
   - board: nice_nano_v2
-    shield: chocofi_left
+    shield: torabo_tsuki_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+
+  # Torabo Tsuki 右手側
   - board: nice_nano_v2
-    shield: chocofi_right
-  - board: nice_nano_v2
-    shield: chocv
-  - board: nice_nano_v2
-    shield: skeletyl_left
-  - board: nice_nano_v2
-    shield: skeletyl_right
+    shield: torabo_tsuki_right
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
