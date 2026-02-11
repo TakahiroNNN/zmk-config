@@ -1,2 +1,1 @@
-
-#include "../../../config/keymap.keymap"
+#include "keymap.keymap"
